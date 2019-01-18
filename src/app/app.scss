@@ -14,3 +14,26 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+// Custom icons
+// Overriding the ion-icon behavior
+// All custom icons will start with "appname-" prefix
+ion-icon {
+  &[class*="appname-"] {
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+  }
+  // custom icons
+  &[class*="appname-todo"] {
+    background-image: url(../assets/imgs/biblia.png);
+  }
+  // custom icons
+  &[class*="appname-antiguo"] {
+    background-image: url(../assets/imgs/antiguo.svg);
+  }
+  // custom icons
+  &[class*="appname-nuevo"] {
+    background-image: url(../assets/imgs/nuevo.svg);
+  }
+
+}

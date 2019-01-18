@@ -3,28 +3,43 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import {PopoverPage} from "../pages/popover/popover";
+
+
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { InicioPage } from '../pages/inicio/inicio';
+import { CapituloPage } from  '../pages/capitulo/capitulo'
+import { BibliaProvider } from '../providers/biblia/biblia';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    InicioPage,
+    CapituloPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    InicioPage,
+    CapituloPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BibliaProvider
   ]
 })
 export class AppModule {}
